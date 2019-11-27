@@ -2,8 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body {
-	padding-top: 5%;
+	// padding-top: 5%;
 	height: 100vh;
-	background-color: #28272C;
+	background-color: #282C33;
+
+}
+
+h1, p {
 	color: #62DAFB;
+}
+
+ h5 {
+	color: white;
+	font-weight: 400 !important;
 }

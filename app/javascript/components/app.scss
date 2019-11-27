@@ -1,0 +1,35 @@
+
+.flex {
+	display: flex;
+	flex-direction: row;
+}
+
+.sequencer {
+	margin-top: 6%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -55%);
+	transform: translate(-50%, -55%);
+	padding: 1em;
+	background: #28282c;
+	border-radius: 4px;
+}
+
+.keys-column {
+	box-sizing: border-radius;
+	display: flex;
+	flex-direction: column-reverse;
+	flex-wrap: wrap;
+}
+
+.key {
+	background: #36363c;
+	border-radius: 4px;
+	cursor: pointer;
+	width: calc(600px / 10 - 10px);
+	height: calc(600px / 10 - 10px);
+	margin: 5px;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+	transition: #42424a 100ms ease;
+}
