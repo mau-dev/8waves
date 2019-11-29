@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Sequencer from '../components/sequencer'
+import Grid from '../components/grid'
+import Sequencer from "./sequencer";
+import PlayerProvider from "./player-provider";
+import Tone from "tone";
 
 // import axios from 'axios';
 // import Grid from '@material-ui/core/Grid';
@@ -15,7 +18,7 @@ class App extends React.Component {
 
             return (
                 <div class="wrapper sequencer">
-                <Sequencer />
+                <Grid />
 
 
                </div>

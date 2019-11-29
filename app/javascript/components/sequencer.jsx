@@ -1,211 +1,86 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import classnames from 'classnames';
 
-// import axios from 'axios';
-// import Grid from '@material-ui/core/Grid';
-// import { hot } from 'react-hot-loader';
+// import KeyBehaviour from 'keyBehaviour';
+// import Grid from 'grid';
+
+
 // import styles from './style.scss';
-import styles from './app.scss';
+
+// const cx = classnames.bind(styles)
+
+
+const waves = [{
+        wave: 'kick',
+        url: 'sounds/kick.wav'
+    },
+    {
+        wave: 'tom-hi',
+        url: 'sounds/tom-hi.wav'
+    },
+    {
+        wave: 'tom-low',
+        url: 'sounds/tom-low.wav'
+    },
+    {
+        wave: 'snare',
+        url: 'sounds/snare.wav'
+    },
+    {
+         wave: 'rim',
+        url: 'sounds/rim.wav'
+    },
+    {
+         wave: 'cymbal',
+        url: 'sounds/cymbal.wav'
+    },
+    {
+         wave: 'shaker',
+        url: 'sounds/shaker.wav'
+    },
+    {
+         wave: 'snare',
+        url: 'sounds/snare.wav'
+    }
+
+];
+
 
 
 class Sequencer extends React.Component {
 
-    render() {
+        constructor() {
+            super();
 
-            return (
-               <div>
-                <button id="stop" class="navigation-buttons fa fa-stop" disabled></button>
-                 <button id="play" class="navigation-buttons fa fa-play"></button>
+            this.steps = this.createSteps();
 
-                {/* sequencer div */}
-               <div className=" wrapper-sequencer flex">
+  }
 
 
-                  <div className="keys-column step-1">
-                   {/* keys column, column 1 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
+  createSteps() {
+    let steps = new Array(16);
+    for (let i = 0; i < 16; i++) {
+        console.log(steps);
+      steps[i] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
 
-                    <div className="keys-column step-2">  {/* keys column, column 2 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-3">  {/* keys column, column 3 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-4">  {/* keys column, column 4 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-5">  {/* keys column, column 5 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-6">  {/* keys column, column 6 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-7">  {/* keys column, column 7 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-8">  {/* keys column, column 8 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                   <div className="keys-column step-9">  {/* keys column, column 9 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-10">  {/* keys column, column 10 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-11">  {/* keys column, column 11 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-12">  {/* keys column, column 12 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-13">  {/* keys column, column 13 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-14">  {/* keys column, column 14 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-15">  {/* keys column, column 15 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-                    <div className="keys-column step-16">  {/* keys column, column 16 */}
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                      <div className="key"></div>
-                  </div>
-
-
-
-             </div> {/* closing sequencer div */}
-  </div>
-
-        );
     }
+
+    return steps;
+  }
+
+  getScale() {
+    const tones = [195.995, 220, 233.082, 261.626, 293.665, 311.127, 349.228, 391.995];
+    return tones
+  }
+
+   getWaves() {
+    //get audio files
+    const waves = [];
+    return waves
+  }
+
 
 }
 
-export default Sequencer;
+const sequencer = new Sequencer();
