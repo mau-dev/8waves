@@ -16,13 +16,13 @@ class Grid extends React.Component {
 
             return (
                <div>
-                <button id="stop" class="navigation-buttons fa fa-stop" disabled></button>
-                 <button id="play" class="navigation-buttons fa fa-play"></button>
+                <button id="stop" className="navigation-buttons fa fa-stop" disabled></button>
+                 <button id="play" className="navigation-buttons fa fa-play"></button>
 
                 {/* sequencer div */}
                <div className=" wrapper-sequencer flex">
-               <Sequencer>
-               <KeyBehaviour/>
+
+
 
 
                   <div className="keys-column step-1">
@@ -202,18 +202,10 @@ class Grid extends React.Component {
                       <div className="key"></div>
                   </div>
 
-              </Sequencer>
+
 
              </div> {/* closing sequencer div */}
-             <audio src="sounds/shaker.wav"></audio>
-            <audio  src="sounds/clap.wav"></audio>
-            <audio src="sounds/cymbal.wav"></audio>
-            <audio src="sounds/tom-hi.wav"></audio>
-            <audio src="sounds/rim.wav"></audio>
-            <audio src="sounds/tamb.wav"></audio>
-            <audio src="sounds/kick.wav"></audio>
-            <audio src="sounds/tom-low.wav"></audio>
-            <audio src="sounds/snare.wav"></audio>
+
   </div>
 
 
