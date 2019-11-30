@@ -121,10 +121,11 @@
 
 import React, { useState, useEffect } from "react";
 import ReactDOM from 'react-dom';
-
 import Tone from "tone";
-
 import Grid from "./grid";
+import PlayerProvider from "./player-provider";
+import Bar from "./nav-bar";
+import PlayButton from "./play-button";
 
 
 const steps = 16;
@@ -181,8 +182,11 @@ const Sequencer = ({ player }) => {
   }, [currentStep, playing]);
 
   return (
-    <div>
-           <Grid sequence={sequence} toggleStep={toggleStep} />
+      <div>
+      <Bar>
+        <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
+      </Bar>
+      <Grid sequence={sequence} toggleStep={toggleStep} />
     </div>
   );
 };
