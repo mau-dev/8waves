@@ -1,6 +1,8 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 // // import classnames from 'classnames';
+
+import Tone from "tone";
 
 // // import KeyBehaviour from 'keyBehaviour';
 import Grid from './grid';
@@ -82,71 +84,33 @@ import Grid from './grid';
 
 //   }
 
+const steps = 16;
+const initialCellState = { triggered: false, activated: false };
+const waves = ["kick", "tomHi", "tomLow", "snare", "rim", "cymbal", "shaker", "snare"];
+const initialState = [
+  new Array(16).fill(initialCellState),
+  new Array(16).fill(initialCellState),
+  new Array(16).fill(initialCellState),
+  new Array(16).fill(initialCellState),
+  new Array(16).fill(initialCellState),
+  new Array(16).fill(initialCellState),
+  new Array(16).fill(initialCellState),
+  new Array(16).fill(initialCellState)
+];
 
-//   // createSteps() {
-//   //   let steps = new Array(16);
-//   //   for (let i = 0; i < 16; i++) {
-//   //       console.log(steps);
-//   //     steps[i] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-
-//   //   }
-
-//   //   return steps;
-//   // }
-
-//   getScale() {
-//     const tones = [195.995, 220, 233.082, 261.626, 293.665, 311.127, 349.228, 391.995];
-//     return tones
-//   }
-
-//    getWaves() {
-//     //get audio files
-//     const waves = [];
-//     return waves
-//   }
-
-
-// }
-
-// const sequencer = new Sequencer();
-
-
-import React, { useState, useEffect } from "react";
-// import Grid from "./grid";
-import Tone from "tone";
-// import PlayerProvider from "./player-provider";
-// import Bar from "./nav-bar";
-// import PlayButton from "./play-button";
-class Sequencer extends React.Component {
-
-
-    constructor() {
-            super();
-            this.state= {
-            steps: [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            currentStep: 0,
-            playing: false
-
-            };
-
-            // this.steps = this.createSteps();
-
-  }
+console.log("initial state" + initialState);
+const Sequencer = ({ player }) => {
+  const [sequence, setSequence] = useState(initialState);
+  const [playing, setPlaying] = useState(true);
+  const [currentStep, setCurrentStep] = useState(0);
 
 
 
-
-render() {
-
-  return (
+    return (
     <div>
-      <h1>hello from sequencer</h1>
-      <Grid />
-
+      <Grid  />
+      <h3>hello from sequencer</h3>
     </div>
   );
 
-}
-};
-
-export default Sequencer;
+ }
