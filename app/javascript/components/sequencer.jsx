@@ -124,7 +124,7 @@ import ReactDOM from 'react-dom';
 import Tone from "tone";
 import Grid from "./grid";
 import PlayerProvider from "./player-provider";
-import Bar from "./nav-bar";
+import Bar from "./nav";
 import PlayButton from "./play-button";
 
 
