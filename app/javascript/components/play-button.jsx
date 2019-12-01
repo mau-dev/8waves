@@ -1,5 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+// var FontAwesome = require('react-fontawesome');
+// import PropTypes from 'prop-types';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+// import { faPlay } from '@fortawesome/free-solid-svg-icons'
+// const element = <FontAwesomeIcon icon={faCoffee} />
+import { FaPlay } from 'react-icons/fa';
+import { FaPause } from 'react-icons/fa';
 
 
 const Button = styled.button`
@@ -26,5 +34,5 @@ const Button = styled.button`
 `;
 
 export default ({ playing, onClick }) => (
-  <Button onClick={onClick}>{playing ? "Stop" : "Play"}</Button>
+  <Button onClick={onClick}>{playing ? <span><FaPause /></span> : <span><FaPlay /></span>}</Button>
 );

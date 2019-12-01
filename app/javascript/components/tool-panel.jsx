@@ -67,7 +67,7 @@ class ToolPanel extends React.Component {
                   value={this.state.type}
                   data-label="wave"
                   className="wave"
-                  onChange={e => this.changeWaveType(e.target.value)}
+                  onChange={e => this.changeInstrument(e.target.value)}
                 >
                   <option>DrumMachine</option>
                   <option>Piano</option>

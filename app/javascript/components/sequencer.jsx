@@ -144,9 +144,15 @@ const initialState = [
 ];
 console.log("initial state" + initialState);
 const Sequencer = ({ player }) => {
+
   const [sequence, setSequence] = useState(initialState);
+  console.log(setSequence);
   const [playing, setPlaying] = useState(false);
+   console.log(playing + " from sequencer playing")
   const [currentStep, setCurrentStep] = useState(0);
+
+  // const [currentInstrument, setCurrentInstrument] = useState(drumMachine);
+
 
   const toggleStep = (line, step) => {
     const sequenceCopy = [...sequence];

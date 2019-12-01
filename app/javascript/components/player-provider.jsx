@@ -5,7 +5,9 @@ const PlayerProvider = ({ children }) => {
   const [player, setPlayer] = useState(null);
   useEffect(() => {
     const player = new Tone.Players(
+
       {
+
         kick: "/sounds/kick.wav",
         tomHi: "/sounds/tom_hi.wav",
         tomLow: "/sounds/tom_low.wav",
@@ -17,6 +19,7 @@ const PlayerProvider = ({ children }) => {
       },
       () => {
         console.log("buffers loaded");
+         console.log(player + "player" + setPlayer)
         setPlayer(player);
       }
     ).toMaster();
