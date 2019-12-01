@@ -13,7 +13,7 @@ const PlayerProvider = ({ children }) => {
         rim: "/sounds/rim.wav",
         cymbal: "/sounds/cymbal.wav",
         shaker: "/sounds/shaker.wav",
-        snare: "/sounds/snare.wav"
+        snare: "/sounds/tamb.wav"
       },
       () => {
         console.log("buffers loaded");

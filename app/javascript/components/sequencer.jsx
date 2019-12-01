@@ -126,6 +126,7 @@ import Grid from "./grid";
 import PlayerProvider from "./player-provider";
 import Bar from "./nav";
 import PlayButton from "./play-button";
+import ToolPanel from "./tool-panel";
 
 
 const steps = 16;
@@ -182,10 +183,11 @@ const Sequencer = ({ player }) => {
   }, [currentStep, playing]);
 
   return (
-      <div>
-      <Bar>
-        <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
-      </Bar>
+      <div className="wrapper">
+  {/*<Bar>
+  //       <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
+  //     </Bar> */}
+ <ToolPanel />
       <Grid sequence={sequence} toggleStep={toggleStep} />
     </div>
   );
