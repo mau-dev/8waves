@@ -8,8 +8,8 @@ export const NAVBAR_HEIGHT = "60px";
 
 const Bar = styled.div`
   width: 50px;
-  // text-align: center;
-  // position: realtive;
+   text-align: center;
+ position: absolute;
 `;
 
 const NavBar = ({ children }) => {
