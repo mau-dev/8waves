@@ -10,7 +10,13 @@ const Button = styled.button`
   border-radius: 5px;
   color: white;
   font-size: 1em;
-  margin: 0.5em;
+  margin: 5px 0;
+
+  height: 46px;
+  display: flex;
+  align-self: flex-end;
+
+
 
   &:hover {
     background: #787885;

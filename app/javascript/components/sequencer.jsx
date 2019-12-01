@@ -145,14 +145,14 @@ const initialState = [
 console.log("initial state" + initialState);
 const Sequencer = ({ player }) => {
   const [sequence, setSequence] = useState(initialState);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
 
   const toggleStep = (line, step) => {
     const sequenceCopy = [...sequence];
     const { triggered, activated } = sequenceCopy[line][step];
     sequenceCopy[line][step] = { triggered, activated: !activated };
-    console.log("toggled");
+    // console.log("toggled");
     setSequence(sequenceCopy);
   };
 
@@ -160,7 +160,7 @@ const Sequencer = ({ player }) => {
     for (let i = 0; i < sequence.length; i++) {
       for (let j = 0; j < sequence[i].length; j++) {
         const { triggered, activated } = sequence[i][j];
-        console.log(sequence);
+        // console.log(sequence);
         sequence[i][j] = { activated, triggered: j === time };
         if (triggered && activated) {
           player.get(waves[i]).start();
@@ -176,7 +176,7 @@ const Sequencer = ({ player }) => {
         setCurrentStep((currentStep + 1) % steps);
         nextStep(currentStep);
       }
-    }, 100 + Math.random() * 20);
+    }, 125);
     return () => {
       clearTimeout(timer);
     };
@@ -184,10 +184,12 @@ const Sequencer = ({ player }) => {
 
   return (
       <div className="wrapper">
-  {/*<Bar>
-  //       <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
-  //     </Bar> */}
- <ToolPanel />
+      <Bar>
+
+       <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
+
+      < /Bar>
+
       <Grid sequence={sequence} toggleStep={toggleStep} />
     </div>
   );

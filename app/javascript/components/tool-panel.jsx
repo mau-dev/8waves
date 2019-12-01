@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 // import cx from 'classnames'
+import PlayButton from "./play-button";
 
 
 class ToolPanel extends React.Component {
@@ -8,6 +9,8 @@ class ToolPanel extends React.Component {
     bpm: 120
 
   }
+
+
 
   changeBPM(bpm) {
     if (bpm > 300 || bpm < 60) return
@@ -45,6 +48,7 @@ class ToolPanel extends React.Component {
 
         <div className="container nav nav-bar">
           <div className="tools">
+
               <div className="select-wrapper">
                 <span>BPM</span>
                 <input
@@ -71,13 +75,13 @@ class ToolPanel extends React.Component {
 
                 </select>
               </div>
-                <div class="select-wrapper slide-container">
+                <div className="select-wrapper slide-container">
 
 
-          <div class="input-container">
-            <span id="bpm-display"></span>
-            <input type="range" min="60" max="300" value="120" class="slider" id="bpm-slider"/>
-          </div>
+          {/* <div className="input-container">
+          //   <span id="bpm-display"></span>
+          //   <input type="range" min="60" max="300" value="120" className="slider" id="bpm-slider"/>
+          // </div> */}
         </div>
             </div>
          </div>
