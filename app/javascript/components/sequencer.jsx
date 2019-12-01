@@ -190,13 +190,10 @@ const Sequencer = ({ player }) => {
 
   return (
       <div className="wrapper">
-      <Bar>
 
-       <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
-
-      < /Bar>
-
+<ToolPanel />
       <Grid sequence={sequence} toggleStep={toggleStep} />
+
     </div>
   );
 };
