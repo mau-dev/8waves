@@ -146,9 +146,9 @@ console.log("initial state" + initialState);
 const Sequencer = ({ player }) => {
 
   const [sequence, setSequence] = useState(initialState);
-  console.log(setSequence);
+  // console.log(setSequence);
   const [playing, setPlaying] = useState(false);
-   console.log(playing + " from sequencer playing")
+   // console.log(playing + " from sequencer playing")
   const [currentStep, setCurrentStep] = useState(0);
 
   // const [currentInstrument, setCurrentInstrument] = useState(drumMachine);
@@ -160,7 +160,23 @@ const Sequencer = ({ player }) => {
     sequenceCopy[line][step] = { triggered, activated: !activated };
     // console.log("toggled");
     setSequence(sequenceCopy);
+    console.log(initialState)
   };
+
+  const saveMusic = () => {
+    const data ={
+        test:[...initialState]
+    }
+    fetch(url,{
+        method:"POST",
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify(data)
+
+    }).then(res => res.json())
+    .then(res => console.log(res))
+  }
 
   const nextStep = time => {
     for (let i = 0; i < sequence.length; i++) {
@@ -190,10 +206,14 @@ const Sequencer = ({ player }) => {
 
   return (
       <div className="wrapper">
+      <Bar>
 
-<ToolPanel />
+       <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
+
+      < /Bar>
+
+
       <Grid sequence={sequence} toggleStep={toggleStep} />
-
     </div>
   );
 };

@@ -42,13 +42,15 @@
 }
 .nav {
 	width: 70vw;
+
 	background-color: #28282c;
-	padding: 20px 40px;
+	padding: 20px 40px 20px 120px;
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 }
 .tools > select {
 	margin: 5px;
+	// padding-left: 250px;
     outline: none;
     background: rgb(54, 54, 60);
     color: #fff;
@@ -66,7 +68,7 @@
   display: flex;
   padding: 0.35em 0 0.5em;
 
-   select, input {
+   select, input, .record-btn {
    	background: #36363c;
     margin: 5px;
     outline: none;
@@ -81,6 +83,15 @@
 
   }
 
+  .record-btn {
+  	width: 40px;
+  	height: 42px;
+  	 padding: 0.75em 1em;
+  	 margin-top: 5px;
+
+  }
+
+
   span {
   	color: white;
   	opacity: 0.3;
@@ -88,7 +99,7 @@
   	margin-left: 5px;
   }
 }
-select {
+select  {
 padding: 2em;
  height: 44px;
 }

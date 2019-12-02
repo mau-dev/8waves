@@ -1,0 +1,38 @@
+
+<div class="container-fluid pt-5  mt-3 d-flex ">
+		<div class="float-left  col-md-7">
+				<img width="100%" src="<%= image_url 'push.png' %>" />
+		</div>
+		<div class="form-group emp-form h-75 purple my-auto rounded col-md-5 float-right">
+				<div class="inner-form col-md-7  mx-3 ">
+
+						<h4 class="text-center sign-up-title">Sign In:</h4>
+					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+						<div class="field">
+								<%#= <%= f.label :email %>
+
+								<%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "col-md-12", placeholder: "Email" %>
+
+						</div>
+
+						<div class="field ">
+								<%#=  <%= f.label :password_confirmation %>
+								<%= f.password_field :password_confirmation, autocomplete: "current-password", class: "col-md-12", placeholder: "Your password" %>
+						</div>
+
+									  <% if devise_mapping.rememberable? %>
+			    <div class="field">
+			      <%= f.check_box :remember_me %>
+			      <%= f.label :remember_me %>
+			    </div>
+			  <% end %>
+						<div class="actions text-center">
+							 <%= f.submit "Sign in" %>
+						</div>
+
+						<% end %>
+
+						<%= render "devise/shared/links" %>
+				</div>
+		</div>
+</div>

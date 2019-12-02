@@ -4,12 +4,14 @@ import ToolPanel from "./tool-panel";
 import PlayButton from "./play-button";
 
 
-export const NAVBAR_HEIGHT = "60px";
+export const NAVBAR_HEIGHT = "0px";
 
 const Bar = styled.div`
   width: 50px;
    text-align: center;
  position: absolute;
+ margin-left: 255px;
+ margin-top: 48px;
 `;
 
 const NavBar = ({ children }) => {
@@ -18,7 +20,8 @@ const NavBar = ({ children }) => {
 
 <div>
    <Bar>{children}</Bar>
-   <ToolPanel/>
+   <ToolPanel />
+
 </div>
 
 
