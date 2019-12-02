@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :jams
   devise_for :users
   # root "onepage#landing"
+   # root :to => redirect('/users/sign_up')
    root "onepage#index"
 
 #make the registration page root, and move i=onepage index to /playground
