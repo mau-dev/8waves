@@ -31,7 +31,7 @@ class JamsController < ApplicationController
     p params[:jam]
     p '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
 
-    @jam = Jam.new(:title => request.params[:jamTitle] ,  user: current_user, :content => request.params[:data])
+    @jam = Jam.new(:title => request.params[:title] ,  user: current_user, :content => request.params[:data])
     @jam.save
     #:title => request.params[:jamTitle]
 
@@ -69,6 +69,10 @@ class JamsController < ApplicationController
       format.html { redirect_to jams_url, notice: 'Jam was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def getCell
+    @jam.find()
   end
 
   private
