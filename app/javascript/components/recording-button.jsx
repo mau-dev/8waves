@@ -8,17 +8,18 @@ import styled from "styled-components";
 // const element = <FontAwesomeIcon icon={faCoffee} />
 import { FaPlay } from 'react-icons/fa';
 import { FaPause } from 'react-icons/fa';
+import { TiMediaRecord } from 'react-icons/ti';
 
 
 const Button = styled.button`
-  padding: 0.75em 1.5em;
+  padding: 0.75em 1.2em;
   outline: none;
   background-color: #36363c;
   border: none;
-  border-radius: 5px;
+  border-radius: 5px ;
   color: white;
   font-size: 1em;
-  margin: 0 5px 5px 0;
+  margin: 5px 0 5px 5px;
 
   height: 46px;
   display: flex;
@@ -33,6 +34,6 @@ const Button = styled.button`
   }
 `;
 
-export default ({ playing, onClick }) => (
-  <Button onClick={onClick}>{playing ? <span><FaPause /></span> : <span><FaPlay /></span>}</Button>
+export default ({ recording, onClick }) => (
+  <Button onClick={onClick}>{recording ? <span style={{color:"red", fontSize:"27px", display: "flex"}}><TiMediaRecord /></span> : <span style={{fontSize:"27px", display: "flex"}}><TiMediaRecord /></span>}</Button>
 );

@@ -126,7 +126,10 @@ import Grid from "./grid";
 import PlayerProvider from "./player-provider";
 import Bar from "./nav";
 import PlayButton from "./play-button";
+import RecordingButton from "./recording-button";
 import ToolPanel from "./tool-panel";
+import axios from "axios";
+import {FaSave} from 'react-icons/fa';
 
 
 const steps = 16;
@@ -149,6 +152,7 @@ const Sequencer = ({ player }) => {
   // console.log(setSequence);
   const [playing, setPlaying] = useState(false);
    // console.log(playing + " from sequencer playing")
+   const [recording, setRecording] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
 
   // const [currentInstrument, setCurrentInstrument] = useState(drumMachine);
@@ -163,19 +167,36 @@ const Sequencer = ({ player }) => {
     console.log(initialState)
   };
 
-  const saveMusic = () => {
+  const saveJam = () => {
+    console.log("@@@@@@@")
     const data ={
+
         test:[...initialState]
     }
-    fetch(url,{
-        method:"POST",
-        headers: {
-            'Content-Type' : 'application/json'
-        },
-        body : JSON.stringify(data)
+    // const url ="/jams.json";
+    console.log(data + "data srom saveMusic");
+    const csrfToken = document.querySelector("meta[name=csrf-token]").content
+axios.defaults.headers.common["X-CSRF-Token"] = csrfToken
+    axios.post('/jams.json', {
+    firstName: 'Fred',
+    lastName: 'Flintstone',
+    data: (data)
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+    // fetch(url,{
+    //     method:"POST",
+    //     headers: {
+    //         'Content-Type' : 'application/json'
+    //     },
+    //     body : JSON.stringify(data)
 
-    }).then(res => res.json())
-    .then(res => console.log(res))
+    // }).then(res => res.json())
+    // .then(res => console.log(res))
   }
 
   const nextStep = time => {
@@ -188,6 +209,7 @@ const Sequencer = ({ player }) => {
           player.get(waves[i]).start();
         }
       }
+
     }
     setSequence(sequence);
   };
@@ -209,6 +231,9 @@ const Sequencer = ({ player }) => {
       <Bar>
 
        <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
+       <RecordingButton recording={recording} onCLick ={() => setRecording(!recording)} />
+       <button style={{backgroundColor: "#36363c", color: "white", padding: "0.75em 1.2em", border: "none", borderRadius: "5px", height: "46px", margin: "5px 10px"}} onClick ={()=> saveJam()}><FaSave/></button>
+
 
       < /Bar>
 

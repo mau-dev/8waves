@@ -10,6 +10,7 @@ class JamsController < ApplicationController
   # GET /jams/1
   # GET /jams/1.json
   def show
+    @jams = Jam.find(params[:id])
   end
 
   # GET /jams/new
@@ -19,20 +20,23 @@ class JamsController < ApplicationController
 
   # GET /jams/1/edit
   def edit
+   @jams = Jam.find(params[:id])
   end
 
   # POST /jams
   # POST /jams.json
   def create
-    @jam = Jam.new(jam_params)
+    @jam = Jam.new(:title => "banana", user: current_user, :content => request.params[:data])
+    @jam.save
+
 
     respond_to do |format|
       if @jam.save
-        format.html { redirect_to @jam, notice: 'Jam was successfully created.' }
-        format.json { render :show, status: :created, location: @jam }
+        p "success"
+        format.html { redirect_to @jam }
+        format.json { render json:"ok" }
       else
-        format.html { render :new }
-        format.json { render json: @jam.errors, status: :unprocessable_entity }
+        p "fail"
       end
     end
   end
