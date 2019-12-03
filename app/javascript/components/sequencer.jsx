@@ -169,6 +169,7 @@ const Sequencer = ({ player }) => {
 
   const saveJam = () => {
     console.log("@@@@@@@")
+    const jamTitle = prompt("give this session a title:")
     const data ={
 
         test:[...initialState]
@@ -180,7 +181,8 @@ axios.defaults.headers.common["X-CSRF-Token"] = csrfToken
     axios.post('/jams.json', {
     firstName: 'Fred',
     lastName: 'Flintstone',
-    data: (data)
+    data: (data),
+    title: (jamTitle)
   })
   .then(function (response) {
     console.log(response);

@@ -50,9 +50,7 @@ class ToolPanel extends React.Component {
         <div className="container nav nav-bar">
           <div className="tools">
             {/* <button className="select-wrapper record-btn">
-
                 <FaPause />
-
               </button> */}
 
               <div className="select-wrapper">

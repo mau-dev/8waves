@@ -5,6 +5,7 @@ class JamsController < ApplicationController
   # GET /jams.json
   def index
     @jams = Jam.all
+    # @jams = Jam.find(params[:id])
   end
 
   # GET /jams/1
@@ -26,8 +27,13 @@ class JamsController < ApplicationController
   # POST /jams
   # POST /jams.json
   def create
-    @jam = Jam.new(:title => "banana", user: current_user, :content => request.params[:data])
+    p '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+    p params[:jam]
+    p '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+
+    @jam = Jam.new(:title => request.params[:jamTitle] ,  user: current_user, :content => request.params[:data])
     @jam.save
+    #:title => request.params[:jamTitle]
 
 
     respond_to do |format|
