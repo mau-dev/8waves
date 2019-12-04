@@ -1,20 +1,19 @@
-
-<div class="container-fluid pt-5  mt-3 d-flex ">
-		<div class="float-left  reg-left col-md-7">
-				<img width="100%" src="<%= image_url 'push.png' %>" />
+<div class="container landing-container d-flex ">
+		<div class="float-left  reg-left col-md-6">
+				<img class="landing-img" src="<%= image_url 'landing-grid.png' %>" />
 		</div>
-		<div class="form-group reg-form  my-auto rounded col-md-5 float-right">
-				<div class="inner-form col-md-7  mx-3 ">
-						<h3 class="text-center sign-up-title">Welcome to 8 waves</h3>
-						<h4 class="text-center sign-up-title">Register for free:</h4>
+		<div class="form-group reg-form  rounded mt-2 col-md-6 float-right">
+				<div class="inner-form col-md-10 mt-1 mx-4 ">
+					<img width="100%" class="pb-4" src="<%= image_url 'waves-registration.png' %>" />
 						<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-						<div class="field">
+
+		<div class="field input">
 								<%#= <%= f.label :email %>
 
 								<%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "col-md-12", placeholder: "Email" %>
 						</div>
-						<div class="field ">
+						<div class="field input ">
 								<%#= <%= f.label :password %>
 								<% if @minimum_password_length %>
 								<!--<%#=<em>(<%= @minimum_password_length %> characters minimum)</em> #%> -->
@@ -23,17 +22,27 @@
 
 
 						</div>
-						<div class="field ">
+						<div class="field input">
 								<%#=  <%= f.label :password_confirmation %>
 								<%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-md-12", placeholder: "Confirm password" %>
 						</div>
-						<div class="actions text-center">
-								<%= f.submit "Sign Up", class: "reg-submit" %>
+						<div class="actions d-block mb-3 text-center">
+							<%= f.submit "Sign Up", class: "signup-btn" %>
+						</div>
+							<div class="actions d-block login-btn mb-3 text-center">
+							<a class="landing-btn nested-a" href ="/">Back</a>
 						</div>
 
 						<% end %>
 
-						<%= render "devise/shared/links" %>
+						<%#	<%= render "devise/shared/links" %>
+
+
+
+
+
+
+
 				</div>
 		</div>
 </div>

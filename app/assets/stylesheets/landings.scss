@@ -1,6 +1,27 @@
 // Place all the styles related to the Landings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+a {
+	text-transform: none;
+	text-decoration: none;
+	color: inherit;
+
+}
+
+a:hover {
+	text-transform: none;
+	text-decoration: none;
+	color: inherit;
+
+}
+
+a:active {
+	text-transform: none;
+	text-decoration: none;
+	color: inherit;
+
+}
+
 .landing-img {
 	width: 400px;
 	height: 400px;
