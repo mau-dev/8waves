@@ -15,6 +15,8 @@ import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
 import AddIcon from '@material-ui/icons/Add';
 
+import MenuIcon from '@material-ui/icons/Menu';
+
 const useStyles = makeStyles({
   list: {
     width: 200,
@@ -90,7 +92,7 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-      <Button onClick={toggleDrawer('left', true)}>8waves</Button>
+      <Button style={{  position: "absolute", left: "-3px", height: "60px", color: "white", borderTopRightRadius: "35px", borderBottomRightRadius: "35px", top: "3vh", backgroundColor: "#28272C"}}onClick={toggleDrawer('left', true)}><MenuIcon /></Button>
 
       <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
         {sideList('left')}
