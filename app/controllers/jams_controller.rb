@@ -34,7 +34,7 @@ class JamsController < ApplicationController
     @jam = Jam.new(:title => request.params[:title] ,  user: current_user, :content => request.params[:data])
     # @jam.save
     #:title => request.params[:jamTitle]
-
+    # byebug
 
     respond_to do |format|
       if @jam.save

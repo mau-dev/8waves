@@ -42,6 +42,9 @@ export default function TemporaryDrawer() {
 
     setState({ ...state, [side]: open });
   };
+  //<a class="nav-item nav-link"> <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "sign-out"  %></a>
+  // <a class="nav-item nav-link" href="/jams">sessions</a>
+    // <a class="nav-item nav-link" href="/playground">sessions</a>
 
   const sideList = side => (
     <div

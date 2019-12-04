@@ -9,7 +9,7 @@ import RecordingButton from "./recording-button";
 import ToolPanel from "./tool-panel";
 import axios from "axios";
 import { FaSave } from 'react-icons/fa';
-
+import Jams from './jams';
 
 const steps = 16;
 const initialCellState = { triggered: false, activated: false };
@@ -33,15 +33,23 @@ const Sequencer = ({ player }) => {
     // console.log(playing + " from sequencer playing")
     const [recording, setRecording] = useState(false);
     const [currentStep, setCurrentStep] = useState(0);
+    // const [jams, setJams] = useState([]);
 
     // const [currentInstrument, setCurrentInstrument] = useState(drumMachine);
-    axios.get("/jams/1.json").then(res=>{
 
-        console.log(res.data.content)
-        setSequence(res.data.content.test)
+    // useEffect(() => {
+
+    // axios.get("/jams/4.json").then(res=>{
+    //     console.log("axios running")
+
+    //     console.log(res.data.content)
+    //     setSequence(res.data.content.test)
 
 
-    });
+    // });
+
+    // }, []);
+
 
     const toggleStep = (line, step) => {
         const sequenceCopy = [...sequence];
@@ -63,15 +71,21 @@ const Sequencer = ({ player }) => {
         console.log(data + "data srom saveMusic" );
         console.log(jamTitle);
         const csrfToken = document.querySelector("meta[name=csrf-token]").content
-        axios.defaults.headers.common["X-CSRF-Token"] = csrfToken
+        axios.defaults.headers.common["X-CSRF-Token"] = csrfToken;
+        console.log("data", data);
+        console.log("sequence", sequence);
         axios.post('/jams.json', {
                 firstName: 'Fred',
                 lastName: 'Flintstone',
-                data: (data),
+                data: {test: sequence},
                 title: (jamTitle)
             })
             .then(function(response) {
                 console.log(response);
+                console.log("saved jam in databased!!!");
+                // get hold of all the latest saved jams
+                // pass it to jams
+                // setJams(response.....something something)
             })
             .catch(function(error) {
                 console.log(error);
@@ -118,6 +132,13 @@ const Sequencer = ({ player }) => {
 
     }, [currentStep, playing]);
 
+    const updateJam = (updatedSequence) => {
+        console.log("updating jam!");
+        console.log("at sequencer now!")
+        console.log("updatedSequence", updatedSequence);
+        setSequence(updatedSequence);
+    }
+
     return (
         <div className="wrapper">
       <Bar>
@@ -131,6 +152,7 @@ const Sequencer = ({ player }) => {
 
 
       <Grid sequence={sequence} toggleStep={toggleStep} />
+      <Jams updateJam={updateJam}/>
     </div>
     );
 };

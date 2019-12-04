@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :jams
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   # root "onepage#landing"
    # root :to => redirect('/users/sign_up')
    # root "onepage#index"
