@@ -21,6 +21,17 @@
 /* .reg-left {
  	background: linear-gradient(146deg, rgba(79,235,219,1) 2%, rgba(0,190,255,1) 100%);
  }*/
+ * {
+ 	outline: none;
+ }
+
+ *:focus{
+	outline: none;
+}
+
+ *:active{
+	outline: none;
+}
  .input {
 
  width: 100%;

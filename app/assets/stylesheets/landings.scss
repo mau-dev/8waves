@@ -1,6 +1,19 @@
 // Place all the styles related to the Landings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*{
+	outline: none;
+}
+
+*:focus{
+	outline: none;
+}
+
+ *:active{
+	outline: none;
+}
+
+
 a {
 	text-transform: none;
 	text-decoration: none;
