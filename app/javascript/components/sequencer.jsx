@@ -156,7 +156,19 @@ const Sequencer = ({ player }) => {
     const [currentStep, setCurrentStep] = useState(0);
 
     // const [currentInstrument, setCurrentInstrument] = useState(drumMachine);
-    axios.get("/jams/21.json").then(res=>console.log(res.data.content))
+    // axios.get("/jams/21.json").then(res=>console.log(res.data.content));
+  //   axios.get('/jam/1', {
+  //   response=>console.log(response.data.content)
+  // })
+  // .then(function (response) {
+  //   console.log(response);
+  // })
+  // .catch(function (error) {
+  //   console.log(error);
+  // })
+  // .finally(function () {
+  //   // always executed
+  // });
 
     const toggleStep = (line, step) => {
         const sequenceCopy = [...sequence];
