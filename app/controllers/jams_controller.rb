@@ -32,18 +32,22 @@ class JamsController < ApplicationController
     p '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
 
     @jam = Jam.new(:title => request.params[:title] ,  user: current_user, :content => request.params[:data])
-    @jam.save
+    # @jam.save
     #:title => request.params[:jamTitle]
 
 
     respond_to do |format|
       if @jam.save
+
         p "success"
+
         format.html { redirect_to @jam }
         format.json { render json:"ok" }
       else
         p "fail"
+        p "#{jam.errors.messages.inspect}"
       end
+
     end
   end
 
