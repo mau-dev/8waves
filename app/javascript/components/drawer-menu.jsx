@@ -13,6 +13,7 @@ import { FaSave } from 'react-icons/fa';
 import SaveIcon from '@material-ui/icons/Save';
 import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
+import AddIcon from '@material-ui/icons/Add';
 
 const useStyles = makeStyles({
   list: {
@@ -48,9 +49,18 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {['Browse sessions', 'Saved sessions', 'Sign Out'].map((text, index) => (
+        {['Browse sessions', 'Saved sessions' ].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{index % 2 === 0 ? <AppsIcon /> : <SaveIcon/> }</ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+        <Divider />
+      <List>
+        {['New Session', 'Sign Out'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>{index % 2 === 0 ? <AddIcon /> : <PersonIcon />}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
