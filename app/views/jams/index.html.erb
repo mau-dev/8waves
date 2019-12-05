@@ -1,0 +1,26 @@
+
+<div class="container ">
+	<% @jams.each_slice(3) do |jam| %>
+		<div class="card-row mx-auto px-auto d-flex justify-content-around my-5">
+
+			<% jam.each do |card| %>
+			<div class="card float-left justify-content-around" style="width: 18rem; border: none; background-color: transparent ">
+
+
+				<%= link_to card do %><img src="<%= image_url 'landing-grid.png' %>" class="card-img-top mx-auto"  alt="..."><% end %>
+				<div class="card-body">
+					<h5 class="card-title text-center"><%= card.title %></h5>
+
+
+				</div>
+
+
+
+			</div>
+			<% end %>
+
+		</div>
+		<% end %>
+		<br/>
+
+</div>

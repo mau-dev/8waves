@@ -1,0 +1,73 @@
+// Place all the styles related to the Landings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+*{
+	outline: none;
+}
+
+*:focus{
+	outline: none;
+}
+
+ *:active{
+	outline: none;
+}
+
+
+a {
+	text-transform: none;
+	text-decoration: none;
+	color: inherit;
+
+}
+
+a:hover {
+	text-transform: none;
+	text-decoration: none;
+	color: inherit;
+
+}
+
+a:active {
+	text-transform: none;
+	text-decoration: none;
+	color: inherit;
+
+}
+
+.landing-img {
+	width: 400px;
+	height: 400px;
+	display: flex;
+	margin: 0 auto;
+}
+
+.landing-container {
+	padding-top: 20vh;
+}
+
+.landing-paragraph {
+	font-size: 1.4rem;
+}
+
+.signup-btn{
+  width: 100%;
+  background-color: #18C98B;
+  color: #28272C;
+  height: 48px;
+  border-radius: 8px;
+  padding: 10px 0;
+
+}
+
+.login-btn {
+	width: 100%;
+	background-color: #2500E0;
+	color: white;
+	height: 48px;
+  border-radius: 8px;
+}
+
+.dive {
+	color: #2500E0;
+}
