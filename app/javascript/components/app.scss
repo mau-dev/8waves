@@ -1,3 +1,6 @@
+ body {
+	// background-color: #1e1e21;
+	height: 100vh;}
 
 .flex {
 	display: flex;
@@ -32,4 +35,71 @@
 	margin: 5px;
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
 	transition: #42424a 100ms ease;
+}
+.wrapper {
+	height: 100vh;
+	margin-top: 10vh;
+}
+.nav {
+	width: 70vw;
+
+	background-color: #28282c;
+	padding: 20px 40px 20px 250px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+.tools > select {
+	margin: 5px;
+	// padding-left: 250px;
+		outline: none;
+		background: rgb(54, 54, 60);
+		color: #fff;
+		padding: 1em;
+		font-size: 12px;
+		letter-spacing: 1px;
+		border-radius: 4px;
+		box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+		cursor: pointer;
+		border: 2px solid transparent;
+}
+
+
+.tools {
+	display: flex;
+	padding: 0.35em 0 0.5em;
+
+	 select, input, .record-btn {
+		background: #36363c;
+		margin: 5px;
+		outline: none;
+		color: white;
+		padding: 1em;
+		font-size: 12px;
+		letter-spacing: 1px;
+		border-radius: 4px;
+		box-shadow: 0 1px 2px 0 rgba(black, 0.2);
+		cursor: pointer;
+		border: 2px solid transparent;
+
+	}
+
+	.record-btn {
+		width: 40px;
+		height: 42px;
+		 padding: 0.75em 1em;
+		 margin-top: 5px;
+
+	}
+
+
+	span {
+		color: white;
+		opacity: 0.3;
+		display: block;
+		margin-left: 5px;
+	}
+}
+select  {
+padding: 2em;
+ height: 44px;
 }
