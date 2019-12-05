@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import Drawer from '@material-ui/core/Drawer';
+import SaveIcon from '@material-ui/icons/Save';
+import AddIcon from '@material-ui/icons/Add';
+
 
 const Jams = (props) => {
 
@@ -56,16 +60,15 @@ const Jams = (props) => {
     console.log("jams!!", props.jams);
     return (
         <>
-        <div>All Jams</div>
-        <ul>
+      {/* <button style={{ position: "absolute", top: "3vh", right: "-3px", height: "60px", backgroundColor: "#28272C", color: "white", padding: "0.75em 1.2em",  borderTopLeftRadius: "35px", borderBottomLeftRadius: "35px", border: "none" }}> <AddIcon  /><a href="/playground"></a></button> } */}
+        <ul style = {{width: "150px", position: "absolute", top: "10vh", right: "0"}}>
         {
             jams.map(jam => {
                 return(
                 <>
-                <li>{jam.id}</li>
-                <li>{jam.title}</li>
-                <button onClick={() => getJam(jam.id)}>Get Jam</button>
-                <hr/>
+
+                <button style={{position: "relative", right: "-10px", height: "60px", backgroundColor: "#28272C", color: "white", padding: "0.75em 1.2em", border: "none", borderTopLeftRadius: "35px", borderBottomLeftRadius: "35px", width: "100px", marginBottom: "10px"}} onClick={() => getJam(jam.id)}>{jam.title}</button>
+
                 </>
                 );
             })

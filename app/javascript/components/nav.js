@@ -11,7 +11,7 @@ const Bar = styled.div`
   width: 50px;
    text-align: center;
  position: absolute;
- margin-left: 240px;
+ margin-left: 255px;
  display: flex;
  margin-top: 48px;
 `;

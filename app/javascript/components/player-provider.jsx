@@ -13,7 +13,7 @@ const PlayerProvider = ({ children }) => {
         tomLow: "/sounds/tom_low.wav",
         snare: "/sounds/snare.wav",
         rim: "/sounds/rim.wav",
-        cymbal: "/sounds/cymbal.wav",
+        perc: "/sounds/perc.wav",
         shaker: "/sounds/shaker.wav",
         snare: "/sounds/tamb.wav"
       },

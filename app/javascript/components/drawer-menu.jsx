@@ -14,6 +14,7 @@ import SaveIcon from '@material-ui/icons/Save';
 import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
 import AddIcon from '@material-ui/icons/Add';
+import Jams from './jams';
 
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -70,6 +71,7 @@ export default function TemporaryDrawer() {
           </ListItem>
         ))}
       </List>
+
 
     </div>
   );

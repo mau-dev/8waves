@@ -13,7 +13,7 @@ import Jams from './jams';
 
 const steps = 16;
 const initialCellState = { triggered: false, activated: false };
-const waves = ["kick", "tomHi", "tomLow", "snare", "rim", "cymbal", "shaker", "snare"];
+const waves = ["kick", "tomHi", "tomLow", "snare", "rim", "perc", "shaker", "snare"];
 const initialState = [
     new Array(16).fill(initialCellState),
     new Array(16).fill(initialCellState),
