@@ -14,9 +14,11 @@ body {
  	outline-style: none !important;
 
 }
- * {
- 	outline: none;
- 	outline-style: none;
+  * {
+ 	outline: none !important;
+ 	outline-style: none !important;
+ 	outline-color: none !important;
+ 	outline-width: none !important;
  }
 
  *:focus{

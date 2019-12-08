@@ -2,8 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
  * {
- 	outline: none;
- 	outline-style: none;
+ 	outline: none !important;
+ 	outline-style: none !important;
+ 	outline-color: none !important;
+ 	outline-width: none !important;
  }
 
  *:focus{

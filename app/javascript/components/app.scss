@@ -8,10 +8,10 @@
 }
 
  * {
- 	outline: none;
- 	outline-style: none;
- 	outline-color: none;
- 	outline-width: none;
+ 	outline: none !important;
+ 	outline-style: none !important;
+ 	outline-color: none !important;
+ 	outline-width: none !important;
  }
 
  *:focus{
