@@ -23,15 +23,19 @@
  }*/
  * {
  	outline: none;
+ 	outline-style: none;
  }
 
  *:focus{
 	outline: none;
+	outline-style: none;
 }
 
  *:active{
 	outline: none;
+	outline-style: none;
 }
+
  .input {
 
  width: 100%;
