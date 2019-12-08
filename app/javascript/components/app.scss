@@ -10,16 +10,21 @@
  * {
  	outline: none;
  	outline-style: none;
+ 	outline-color: none;
+ 	outline-width: none;
  }
 
  *:focus{
 	outline: none;
 	outline-style: none;
-}
+		outline-color: none;
+ 	outline-width: none;
 
  *:active{
 	outline: none;
 	outline-style: none;
+		outline-color: none;
+ 	outline-width: none;
 }
 
 .sequencer {
