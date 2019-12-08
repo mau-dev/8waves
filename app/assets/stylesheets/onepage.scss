@@ -11,14 +11,17 @@ body {
 }
  * {
  	outline: none;
+ 	outline-style: none;
  }
 
  *:focus{
 	outline: none;
+	outline-style: none;
 }
 
  *:active{
 	outline: none;
+	outline-style: none;
 }
 // #app {
 // 	height:100%;
