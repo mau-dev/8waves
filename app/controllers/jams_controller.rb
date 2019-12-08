@@ -1,4 +1,5 @@
 class JamsController < ApplicationController
+
   before_action :set_jam, only: [:show, :edit, :update, :destroy]
 
   # GET /jams
