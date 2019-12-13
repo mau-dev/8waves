@@ -15,6 +15,7 @@ import AppsIcon from '@material-ui/icons/Apps';
 import PersonIcon from '@material-ui/icons/Person';
 import AddIcon from '@material-ui/icons/Add';
 import Jams from './jams';
+import Link from '@material-ui/core/Link';
 
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -57,8 +58,10 @@ export default function TemporaryDrawer() {
       <List>
         {['Browse sessions', 'Saved sessions' ].map((text, index) => (
           <ListItem button key={text}>
+
             <ListItemIcon>{index % 2 === 0 ? <AppsIcon /> : <SaveIcon/> }</ListItemIcon>
-            <ListItemText primary={text} />
+            {index % 2 === 0 ? <Link href="/jams" > <ListItemText primary={text} /></Link> : <Link href="/jams/1"><ListItemText primary={text} /></Link> }
+
           </ListItem>
         ))}
       </List>
@@ -67,30 +70,11 @@ export default function TemporaryDrawer() {
         {['New Session', 'Sign Out'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{index % 2 === 0 ? <AddIcon /> : <PersonIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
+             {index % 2 === 0 ? <Link href="/playground" > <ListItemText primary={text} /></Link> : <Link href="/users/sign_out"><ListItemText primary={text} /></Link> }
           </ListItem>
         ))}
       </List>
 
-
-    </div>
-  );
-
-  const fullList = side => (
-    <div
-      className={classes.fullList}
-      role="presentation"
-      onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}
-    >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
 
     </div>
   );

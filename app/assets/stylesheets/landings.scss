@@ -78,3 +78,15 @@ a:active {
 .dive {
 	color: #2500E0;
 }
+
+@media screen and (max-width: 780px) {
+  .landing-container {
+	padding-top: 0;
+}
+.landing-img {
+	width: auto;
+	height: 45vh;
+	display: flex;
+	margin: 0 auto;
+}
+}

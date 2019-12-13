@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # root "onepage#landing"
    # root :to => redirect('/users/sign_up')
    # root "onepage#index"
+   delete '/users/sign_out' => 'users/sessions#destroy'
    root "landings#landing"
    get '/getCells' => 'jams#getCell'
 #make the registration page root, and move i=onepage index to /playground
