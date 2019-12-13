@@ -65,7 +65,8 @@
 	width: 70vw;
 
 	background-color: #28282c;
-	padding: 20px 40px 20px 250px;
+	padding: 20px 40px ;
+
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 }
@@ -88,6 +89,7 @@
 .tools {
 	display: flex;
 	padding: 0.35em 0 0.5em;
+	margin-left: 220px;
 
 	 select, input, .record-btn {
 		background: #36363c;
