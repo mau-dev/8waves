@@ -79,14 +79,38 @@ a:active {
 	color: #2500E0;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 780px) and (orientation : portrait) {
   .landing-container {
 	padding-top: 0;
 }
+.reg-left {
+	padding: 2em 0;
+}
 .landing-img {
 	width: auto;
-	height: 45vh;
+	height: 38vh;
 	display: flex;
 	margin: 0 auto;
+}
+.landing-paragraph {
+	font-size: 1rem;
+}
+}
+
+@media screen and (max-width: 570px)  {
+  .landing-container {
+	padding-top: 0;
+}
+.reg-left {
+	padding: 0.5em 0;
+}
+.landing-img {
+	width: auto;
+	height: 35vh;
+	display: flex;
+	margin: 0 auto;
+}
+.landing-paragraph {
+	font-size: 1rem;
 }
 }
