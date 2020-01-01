@@ -70,7 +70,7 @@ export default function TemporaryDrawer() {
         {['New Session', 'Sign Out'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{index % 2 === 0 ? <AddIcon /> : <PersonIcon />}</ListItemIcon>
-             {index % 2 === 0 ? <Link href="/playground" > <ListItemText primary={text} /></Link> : <Link href="/users/sign_out"><ListItemText primary={text} /></Link> }
+             {index % 2 === 0 ? <Link href="/playground" > <ListItemText primary={text} /></Link> : <a rel="nofollow" data-method="delete" href="/users/sign_out"><ListItemText primary={text} /></a> }
           </ListItem>
         ))}
       </List>
