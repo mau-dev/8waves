@@ -55,6 +55,11 @@ a:active {
 	font-size: 1.4rem;
 }
 
+.logo-img {
+	width: 100%;
+	padding-bottom: 1.5rem;
+}
+
 .signup-btn{
   width: 100%;
   background-color: #18C98B;
@@ -77,6 +82,7 @@ a:active {
 
 .dive {
 	color: #2500E0;
+	display: none;
 }
 
 @media screen and (max-width: 780px) and (orientation : portrait) {
@@ -86,14 +92,25 @@ a:active {
 .reg-left {
 	padding: 2em 0;
 }
+.reg-form {
+	padding-top: 1rem;
+}
 .landing-img {
-	width: auto;
-	height: 38vh;
+	width: 70vw;
+	height: auto;
 	display: flex;
 	margin: 0 auto;
 }
 .landing-paragraph {
 	font-size: 1rem;
+	text-align: center;
+}
+.logo-img {
+	width: 70vw;
+	// padding-bottom: 2rem;
+	padding-bottom: 0;
+	display: block;
+	margin: 0 auto;
 }
 }
 
@@ -102,15 +119,31 @@ a:active {
 	padding-top: 0;
 }
 .reg-left {
-	padding: 0.5em 0;
+	padding: 1.5rem 0;
 }
 .landing-img {
-	width: auto;
-	height: 35vh;
+	width: 70vw;
+	height: auto;
 	display: flex;
+	margin: 0 auto;
+}
+.logo-img {
+	width: 70vw;
+	display: block;
 	margin: 0 auto;
 }
 .landing-paragraph {
 	font-size: 1rem;
+	text-align: center;
 }
+}
+
+@media screen and (max-width: 320px)  {
+	.reg-left {
+	padding: 1rem 0;
+}
+.reg-form {
+	padding-top: 0;
+}
+
 }
