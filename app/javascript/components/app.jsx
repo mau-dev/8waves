@@ -29,6 +29,8 @@ import PlayerProvider from "./player-provider";
 // import { Drawer } from '@material-ui/core';
 import TemporaryDrawer from "./drawer-menu";
 
+import DeviceOrientation, { Orientation } from 'react-screen-orientation';
+
 // import { makeStyles } from '@material-ui/core/styles';
 // import Drawer from '@material-ui/core/Drawer';
 // import Button from '@material-ui/core/Button';
@@ -41,12 +43,23 @@ import TemporaryDrawer from "./drawer-menu";
 // import MailIcon from '@material-ui/icons/Mail';
 
 import styles from "./app.scss";
+import img from '../../../public/images/landing-grid.png';
 
 class App extends React.Component {
+
     render() {
   return (
     <>
-    <TemporaryDrawer/>
+    <DeviceOrientation lockOrientation={'landscape'}>
+        {/* Will only be in DOM in landscape */}
+        <Orientation orientation='portrait' alwaysRender={false}>
+          <div>
+            <p className="pls-rotate">Please <span>rotate</span> your device for better experience.</p>
+            <img class="logo-img" src={img} />
+          </div>
+        </Orientation>
+         <Orientation orientation='landscape' alwaysRender={false}>
+          <TemporaryDrawer/>
 
        <PlayerProvider>
       {({ player }) => {
@@ -54,6 +67,10 @@ class App extends React.Component {
         return <Sequencer player={player} />;
       }}
     </PlayerProvider>
+        </Orientation>
+
+    </DeviceOrientation>
+
     </>
   );
 }

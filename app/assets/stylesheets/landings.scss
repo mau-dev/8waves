@@ -99,6 +99,7 @@ a:active {
 }
 .reg-left {
 	padding: 2em 0;
+	height: 50vh;
 }
 .reg-form {
 	padding-top: 1rem;
@@ -108,6 +109,7 @@ a:active {
 	height: auto;
 	display: flex;
 	margin: 0 auto;
+	object-fit: contain;
 }
 .landing-paragraph {
 	font-size: 1rem;
@@ -115,6 +117,7 @@ a:active {
 }
 .logo-img {
 	width: 70vw;
+
 	// padding-bottom: 2rem;
 	padding-bottom: 0;
 	display: block;
