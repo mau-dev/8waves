@@ -43,7 +43,7 @@ import DeviceOrientation, { Orientation } from 'react-screen-orientation';
 // import MailIcon from '@material-ui/icons/Mail';
 
 import styles from "./app.scss";
-import img from '../../../public/images/landing-grid.png';
+// import img from '../../../public/images/landing-grid.png';
 // import img from '../assets/images/landing-grid.png';
 
 
@@ -57,7 +57,7 @@ class App extends React.Component {
         <Orientation orientation='portrait' alwaysRender={false}>
           <div>
             <p className="pls-rotate">Please <span>rotate</span> your device for better experience.</p>
-            <img class="logo-img" src={img} />
+            {/* <img class="logo-img" src={img} />*/}
           </div>
         </Orientation>
          <Orientation orientation='landscape' alwaysRender={false}>
