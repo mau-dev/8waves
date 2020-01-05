@@ -44,6 +44,8 @@ import DeviceOrientation, { Orientation } from 'react-screen-orientation';
 
 import styles from "./app.scss";
 import img from '../../../public/images/landing-grid.png';
+// import img from '../assets/images/landing-grid.png';
+
 
 class App extends React.Component {
 
